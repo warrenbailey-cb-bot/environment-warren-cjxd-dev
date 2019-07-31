@@ -1,17 +1,22 @@
 cluster:
-  clusterName: ""
-  environmentGitOwner: ""
-  project: ""
+  clusterName: warren-cjxd
+  environmentGitOwner: warrenbailey-org
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  project: jx-development
   provider: gke
-  zone: ""
-gitops: true
+  zone: europe-west4-c
 environments:
 - key: dev
 - key: staging
 - key: production
+gitops: true
 ingress:
-  domain: ""
+  domain: 34.90.167.12.nip.io
   externalDNS: false
+  namespaceSubDomain: -jx.
   tls:
     email: ""
     enabled: false
@@ -21,13 +26,13 @@ secretStorage: vault
 storage:
   logs:
     enabled: true
-    url: ""
+    url: gs://warren-cjxd-logs-8cbe1742-f52e-45be-a5b7-a8a10780c893
   reports:
     enabled: true
-    url: ""
+    url: gs://warren-cjxd-reports-fdd8e0cb-ee28-43bc-bbf4-ef64796d28d
   repository:
     enabled: true
-    url: ""
+    url: gs://warren-cjxd-repository-012f81cf-a9d6-4bdd-bb4f-77030667
 versionStream:
   ref: master
   url: https://github.com/cloudbees/cloudbees-jenkins-x-versions.git
